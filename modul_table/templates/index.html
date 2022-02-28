@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='style.css')}}" rel="stylesheet" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
+    <title>Test task</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row justify-content-center m-5" id="tite">
+            <h1 class="text-center">Таблица</h1>
+        </div>
+        <div class="row justify-content-end mt-5" >
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <select class="form-select filter" aria-label="select-colum" id="column">
+                        <option selected disabled value=null>Выберете столбец</option>
+                        <option value="name">Название</option>
+                        <option value="number">Количество</option>
+                        <option value="distant">Растояние</option>
+                    </select>
+                    <select class="form-select filter" aria-label="select-operator" id="operator">
+                        <option selected disabled value=null>Выберете оператор</option>
+                        <option value="=">равно</option>
+                        <option value="in">содержит</option>
+                        <option value=">">больше</option>
+                        <option value="<">меньше</option>
+                    </select>
+                        <input type="text" class="form-control filter" placeholder="Значение" id="value">
+                        <button class="btn btn-outline-primary" type="button" id="btn-filter" disabled>Отфильтровать</button>
+                    </div>
+                </div>    
+            </div>
+        <div class="row" id="table">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th >Дата</th>
+                    <th class="sorting" id="name">Название</th>
+                    <th class="sorting" id="number">Количество</th>
+                    <th class="sorting" id="distant">Растояние</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>  
+            </table>
+            <div class="row justify-content-end">
+                <div class="col-auto">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination" id="pagination">
+                        <li class="page-item" id="last"><a class="page-link" href="#">Предыдущий</a></li>
+                        <li class="page-item" id="p1"><a class="page-link" href="#" >1</a></li>
+                        <li class="page-item" id="p2"><a class="page-link" href="#" >2</a></li>
+                        <li class="page-item" id="p3"><a class="page-link" href="#" >3</a></li>
+                        <li class="page-item" id="next"><a class="page-link" href="#">Следующий</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='index.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>

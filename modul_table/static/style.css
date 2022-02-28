@@ -1,0 +1,16 @@
+table thead th {
+    cursor: pointer;
+}
+table thead .sorting:after {
+    opacity: 0.4;
+    content: "\2193\2191";
+    cursor: pointer;
+}
+
+table thead .sorting_asc:after {
+     content: "\2193";
+}
+
+table thead .sorting_desc:after {
+    content: "\2191";
+}
